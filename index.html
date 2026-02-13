@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auréa Parfums</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <h1>Auréa Parfums</h1>
+        </div>
+
+        <nav class="filters">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="mujer">Mujer</button>
+            <button class="filter-btn" data-filter="hombre">Hombre</button>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container">
+
+        <section class="perfume-grid" id="perfumeGrid">
+
+            <!-- Card ejemplo (luego se generarán dinámicamente) -->
+            <a href="perfume.html?id=1" class="perfume-card" data-genero="mujer">
+                
+                <div class="image-container">
+                    <img src="assets/img/ejemplo.png" alt="Nombre del perfume">
+                </div>
+
+                <div class="perfume-info">
+                    <h3 class="perfume-name">Erba Pura</h3>
+
+                    <div class="price-container">
+                        <span class="final-price">$3,690</span>
+                        <span class="original-price">$4,500</span>
+                    </div>
+                </div>
+            </a>
+        </section>
+    </main>
+
+    <button id="adminToggle" class="admin-toggle">+</button>
+
+    <div id="adminModal" class="admin-modal">
+        <div class="admin-modal-content">
+            <span class="close-admin">&times;</span>
+            <h4>AGREGAR PERFUME</h4>
+
+            <form id="adminForm">
+
+            <!-- ===== BLOQUE CAMPOS PRINCIPALES ===== -->
+            <div class="admin-top-grid">
+
+                <input type="text" id="adminMarca" placeholder="Marca" required>
+
+                <input type="text" id="adminNombre" placeholder="Nombre del perfume" required>
+
+                <select id="adminSubtitulo">
+                    <option value="">Sin subtítulo</option>
+                    <option value="EDT">Eau de Toilette</option>
+                    <option value="EDP">Eau de Parfum</option>
+                    <option value="Parfum">Parfum</option>
+                    <option value="Intense">Intense</option>
+                </select>
+
+                <div class="admin-image-field">
+                    <label>Imagen del perfume</label>
+
+                    <button type="button" id="openImageSelector" class="image-select-btn">
+                        Seleccionar imagen
+                    </button>
+
+                    <div id="selectedImagePreview" class="selected-image-preview"></div>
+
+                    <input type="hidden" id="adminImagen" required>
+                </div>
+
+                <div id="imageSelectorModal" class="image-selector-modal">
+                    <div class="image-selector-content">
+                        <span class="close-image-selector">&times;</span>
+                        <h4>Seleccionar Imagen</h4>
+                        <div id="adminImageGrid" class="admin-image-grid"></div>
+                    </div>
+                </div>
+
+
+
+                <select id="adminGenero" required>
+                    <option value="mujer">Mujer</option>
+                    <option value="hombre">Hombre</option>
+                    <option value="unisex">Unisex</option>
+                </select>
+
+                <input type="number" id="adminPrecioOriginal" placeholder="Precio original" required>
+
+                <input type="number" id="adminPrecioFinal" placeholder="Precio descuento" required>
+
+                <input type="text" id="adminDescuento" placeholder="% descuento" readonly>
+
+            </div>
+
+
+            <!-- ===== BLOQUE NOTAS ===== -->
+            <div class="admin-notas-block">
+
+                <div class="notas-admin-section">
+                    <h3>Notas de Salida</h3>
+                    <div class="tag-container" data-tipo="salida"></div>
+                    <input type="text" class="tag-input" data-tipo="salida" placeholder="Buscar nota...">
+                    <div class="tag-dropdown" data-tipo="salida"></div>
+                </div>
+
+                <div class="notas-admin-section">
+                    <h3>Notas de Corazón</h3>
+                    <div class="tag-container" data-tipo="corazon"></div>
+                    <input type="text" class="tag-input" data-tipo="corazon" placeholder="Buscar nota...">
+                    <div class="tag-dropdown" data-tipo="corazon"></div>
+                </div>
+
+                <div class="notas-admin-section">
+                    <h3>Notas de Fondo</h3>
+                    <div class="tag-container" data-tipo="fondo"></div>
+                    <input type="text" class="tag-input" data-tipo="fondo" placeholder="Buscar nota...">
+                    <div class="tag-dropdown" data-tipo="fondo"></div>
+                </div>
+
+            </div>
+
+
+            <!-- ===== BLOQUE USO ===== -->
+            <div class="uso-admin-section">
+                <h4>Cuándo usarlo</h4>
+                <div class="uso-admin-grid" id="usoAdminGrid"></div>
+            </div>
+
+            <button type="submit">Guardar</button>
+
+        </form>
+
+        </div>
+    </div>
+
+    <script src="data/iconsUso.js"></script>
+    <script src="data/notas.js"></script>
+    <script src="data/perfumes.js"></script>
+    <script src="data/imagenes.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
