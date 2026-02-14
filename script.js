@@ -276,7 +276,7 @@ function loadImageGrid() {
 
     imagenesDisponibles.forEach(nombreArchivo => {
 
-        const ruta = "assets/img/" + nombreArchivo;
+        const ruta = "assets/img/perfumes/" + nombreArchivo;
 
         const item = document.createElement("div");
         item.classList.add("admin-image-item");

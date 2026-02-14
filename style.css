@@ -470,12 +470,7 @@ body {
 }
 
 /*==============  IMAGENES EN EL SELECTOR DE AGREGAR PERFUME  =============*/
-.admin-image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-    gap: 12px;
-    margin-top: 10px;
-}
+
 
 .admin-image-item {
     border: 2px solid transparent;
@@ -490,7 +485,7 @@ body {
     height: 90px;
     object-fit: contain;
     background: #F9FAFB;
-    padding: 6px;
+    padding: 0px 3px 0 3px;
 }
 
 .admin-image-item:hover {
@@ -543,14 +538,19 @@ body {
     width: 700px;
     max-width: 95%;
     border-radius: 16px;
+    max-height: 80vh; 
 }
+
 
 .admin-image-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 15px;
     margin-top: 15px;
+    overflow-y: auto;       /* scroll vertical */
+    max-height: 60vh;       /* altura interna */
+    padding-right: 6px;     /* espacio para scrollbar */
 }
+
 
 .admin-image-item {
     border: 2px solid transparent;
@@ -558,7 +558,6 @@ body {
     overflow: hidden;
     cursor: pointer;
     text-align: center;
-    padding: 8px;
 }
 
 .admin-image-item img {
@@ -569,8 +568,8 @@ body {
 
 .admin-image-item span {
     font-size: 11px;
-    margin-top: 6px;
     display: block;
+    margin-bottom: 5px;
 }
 
 .admin-image-item.selected {
@@ -830,7 +829,7 @@ body {
 }
 
 .perfume-brand {
-    font-size: 14px;
+    font-size: 12px;
     color: #6B7280;
     margin-top: 4px;
     letter-spacing: 1.2px;

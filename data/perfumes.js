@@ -7,7 +7,7 @@ const perfumes = [
         genero: "unisex",
         precioOriginal: 4500,
         precioFinal: 3690,
-        imagen: "assets/img/erba-pura.png",
+        imagen: "assets/img/perfumes/erba-pura.png",
         
         notas: {
         salida: ["bergamota de Calabria", "naranja siliciana"],
